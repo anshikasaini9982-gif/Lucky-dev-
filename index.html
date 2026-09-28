@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LUCKY DEV | Premium Bot Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+:root{--ac:#00f2fe;--ac2:#4facfe;--purp:#7f00ff;--gold:#ffb703;--bg:#030712;--cd:rgba(15,23,42,0.75);--bd:rgba(255,255,255,0.08);--tx:#f8fafc;--mu:#94a3b8}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
+ background:
+  radial-gradient(600px 350px at 90% 0%,rgba(127,0,255,0.25),transparent),
+  radial-gradient(550px 350px at 10% 25%,rgba(0,242,254,0.2),transparent),
+  radial-gradient(400px 300px at 50% 85%,rgba(255,183,3,0.1),transparent),
+  radial-gradient(rgba(255,255,255,0.07) 1px,transparent 1px),
+  linear-gradient(180deg,#030712,#080f24 45%,#030712);
+ background-size:auto,auto,auto,24px 24px,auto}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 50% 50%,transparent 60%,rgba(3,7,18,0.9) 100%)}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(3,7,18,0.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.5)}
+.lg{font:700 18px 'Space Grotesk';text-decoration:none;letter-spacing:.5px;color:var(--tx)}
+.lg span{background:linear-gradient(90deg,var(--ac),var(--ac2),var(--purp));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.jn{background:linear-gradient(135deg,#fff,#cbd5e1);color:#030712;font:700 12px 'Space Grotesk';padding:8px 16px;border-radius:99px;text-decoration:none;box-shadow:0 4px 15px rgba(255,255,255,0.2),inset 0 1px 0 #fff;transition:transform .2s}
+.jn:active{transform:scale(0.95)}
+.wrap{max-width:580px;margin:auto;padding:24px 18px 90px}
+header{text-align:center;padding:30px 10px 10px;animation:rise .7s cubic-bezier(0.16,1,0.3,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.ava-box{width:130px;height:130px;margin:0 auto 20px;position:relative}
+.ava-box::before{content:"";position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle,rgba(0,242,254,0.45),transparent 70%);filter:blur(10px);animation:pulse 3.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
+.ring{width:100%;height:100%;border-radius:50%;background:conic-gradient(from 0deg,var(--ac),var(--purp),var(--gold),var(--ac));padding:3.5px;box-sizing:border-box;box-shadow:0 12px 35px rgba(0,0,0,0.7)}
+.ph{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#0f172a;border:3px solid var(--bg);display:grid;place-items:center}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph span{font:700 36px 'Space Grotesk';color:var(--tx)}
+.tick{position:absolute;right:2px;bottom:2px;width:32px;height:32px;border-radius:50%;animation:glow 2s ease-in-out infinite}
+.tick svg{width:100%;height:100%;display:block}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 6px rgba(0,242,254,0.6))}50%{filter:drop-shadow(0 0 16px rgba(0,242,254,1))}}
+.status-pill{display:inline-flex;align-items:center;gap:6px;font:700 11px 'Space Grotesk';color:#22c55e;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);padding:4px 12px;border-radius:99px;margin-bottom:12px;backdrop-filter:blur(8px)}
+.dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:blink 1.5s infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font:800 38px/1.1 'Space Grotesk';margin:8px 0 12px;display:flex;gap:8px;align-items:center;justify-content:center;letter-spacing:-0.5px}
+.ds{color:var(--mu);font-size:15px;max-width:440px;margin:auto;font-weight:400}
+.btns{display:flex;gap:12px;justify-content:center;margin-top:24px}
+.btns a{padding:14px 24px;border-radius:14px;font:700 13.5px 'Space Grotesk';text-decoration:none;transition:all .2s;position:relative;overflow:hidden;letter-spacing:.3px}
+.btn-primary{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#030712;box-shadow:0 8px 25px rgba(0,242,254,0.35)}
+.btn-primary::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,0.7),transparent);animation:sweep 3.5s infinite}
+@keyframes sweep{0%{left:-60%}50%,100%{left:140%}}
+.btn-secondary{background:rgba(255,255,255,0.05);color:var(--tx);border:1px solid var(--bd);backdrop-filter:blur(10px)}
+.card{background:linear-gradient(145deg,rgba(15,23,42,0.8),rgba(15,23,42,0.4));border:1px solid var(--bd);border-radius:20px;padding:22px;margin-top:20px;box-shadow:0 15px 35px -10px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.08);backdrop-filter:blur(12px)}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.card-title{font:700 16px 'Space Grotesk';color:var(--ac);display:flex;gap:8px;align-items:center}
+pre{background:#020617;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:14px;font:12.5px/1.6 'JetBrains Mono',monospace;color:#93c5fd;overflow-x:auto}
+.copy-btn{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:var(--tx);font:600 11px 'JetBrains Mono';padding:4px 10px;border-radius:6px;cursor:pointer}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.stat-item{background:rgba(15,23,42,0.6);border:1px solid var(--bd);border-radius:18px;padding:18px;text-align:center;position:relative;overflow:hidden}
+.stat-item b{display:block;font:800 28px 'Space Grotesk';background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-item small{color:var(--mu);font-size:12.5px;font-weight:600}
+.srv-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.srv-item:last-child{border-bottom:none}
+.srv-ico{width:42px;height:42px;border-radius:12px;background:rgba(0,242,254,0.1);border:1px solid rgba(0,242,254,0.2);display:grid;place-items:center;font-size:20px;flex:none}
+.srv-cnt b{font:700 15px 'Space Grotesk';display:block}
+.srv-cnt p{color:var(--mu);font-size:13px;margin-top:2px}
+.banner{background:linear-gradient(135deg,rgba(0,242,254,0.15),rgba(127,0,255,0.15));border:1px solid rgba(0,242,254,0.3);border-radius:20px;padding:24px;text-align:center;margin-top:24px}
+.banner h3{font:700 20px 'Space Grotesk';margin-bottom:6px}
+.banner p{color:var(--mu);font-size:13.5px;margin-bottom:16px}
+.banner a{display:inline-block;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#030712;padding:12px 24px;border-radius:12px;font:700 13px 'Space Grotesk';text-decoration:none;box-shadow:0 6px 20px rgba(0,242,254,0.3)}
+footer{text-align:center;color:var(--mu);font:12px 'JetBrains Mono';padding:30px 18px 80px}
+.fab{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;font-size:24px;text-decoration:none;box-shadow:0 10px 30px rgba(0,242,254,0.4),0 0 0 3px rgba(255,255,255,0.2);z-index:90}
+#boot{position:fixed;inset:0;z-index:999;background:#030712;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+#boot.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .4s ease,visibility .4s}
+.term{width:min(86vw,380px);font:12.5px/1.7 'JetBrains Mono',monospace;color:#38bdf8;min-height:140px}
+.cursor{display:inline-block;width:7px;height:13px;background:#38bdf8;vertical-align:-2px;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:0}}
+.bootbar{width:min(86vw,380px);height:3px;border-radius:3px;background:rgba(255,255,255,0.08);overflow:hidden}
+.bootbar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--ac),var(--purp),var(--gold));transition:width .2s linear}
+</style></head><body>
+<div id="boot"><div style="font:700 16px 'Space Grotesk';letter-spacing:2px">LUCKY<span style="color:var(--ac)">.DEV</span></div><div class="term" id="bootTxt"></div><div class="bootbar"><i id="bootBarI"></i></div><div style="font:11px 'JetBrains Mono';color:#64748b;margin-top:6px">tap anywhere to skip</div></div>
+<nav><a class="lg" href="index.html" id="lg"></a><a class="jn" id="jc" target="_blank" rel="noopener">JOIN CHANNEL</a></nav>
+<div class="wrap">
+ <header>
+  <div class="ava-box"><div class="ring"><div class="ph" id="ph"></div></div><span class="tick"><svg viewBox="0 0 24 24"><path fill="#00f2fe" d="M12 1l2.6 2 3.2-.3 1.2 3 2.9 1.5-.6 3.2L23 12l-1.7 2.6.6 3.2-2.9 1.5-1.2 3-3.2-.3L12 23l-2.6-2-3.2.3-1.2-3-2.9-1.5.6-3.2L1 12l1.7-2.6-.6-3.2 2.9-1.5 1.2-3 3.2.3z"/><path d="M8 12.3l2.7 2.7 5.6-5.6" stroke="#030712" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+  <div class="status-pill"><span class="dot"></span> ONLINE &amp; ACCEPTING ORDERS</div>
+  <h1 id="nm"></h1>
+  <p class="ds">Custom high-performance Telegram bots, automation systems aur secure payment gateways.</p>
+  <div class="btns">
+   <a class="btn-primary" id="b1" target="_blank" rel="noopener">⚡ VIEW MY BOTS</a>
+   <a class="btn-secondary" id="b0" target="_blank" rel="noopener">💬 TELEGRAM</a>
+  </div>
+  <div style="margin-top:16px"><a id="hubBtn" target="_blank" rel="noopener" style="color:var(--ac);font:700 13px 'Space Grotesk';text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.25);padding:9px 18px;border-radius:12px">📢 Open Bots &amp; Channels Hub →</a></div>
+ </header>
+
+ <div class="card">
+  <div class="card-head"><span class="card-title">💻 developer.config</span><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('code').innerText);this.innerText='COPIED!'">COPY</button></div>
+  <pre id="code">const Developer = {
+  name: "Lucky Dev",
+  core: "Telegram Bot Architect",
+  stack: ["NodeJS", "Python", "Webhooks", "APIs"],
+  uptime: "99.99%",
+  motto: "Automating your success."
+};</pre>
+ </div>
+
+ <div class="stats-grid">
+  <div class="stat-item"><b>150+</b><small>Bots Built</small></div>
+  <div class="stat-item"><b>5,000+</b><small>Active Users</small></div>
+  <div class="stat-item"><b>99.9%</b><small>Server Uptime</small></div>
+  <div class="stat-item"><b>24/7</b><small>Live Support</small></div>
+ </div>
+
+ <div class="card">
+  <div class="card-title" style="margin-bottom:14px">🛠️ What I Specialize In</div>
+  <div class="srv-item"><div class="srv-ico">🤖</div><div class="srv-cnt"><b>Custom Telegram Bots</b><p>Fully tailored bots engineered for your exact business requirements.</p></div></div>
+  <div class="srv-item"><div class="srv-ico">⚡</div><div class="srv-cnt"><b>Automation &amp; Webhooks</b><p>Instant auto-reply, channel management, member protection, API sync.</p></div></div>
+  <div class="srv-item"><div class="srv-ico">💳</div><div class="srv-cnt"><b>UPI &amp; Crypto Payments</b><p>Instant auto-delivery, order confirmation, and ledger tracking.</p></div></div>
+ </div>
+
+ <div class="banner">
+  <h3>Ready to start a project?</h3>
+  <p>Apna bot idea share karein, 24 ghante ke andar ready bot paayein.</p>
+  <a id="b2" target="_blank" rel="noopener">CONTACT DEVELOPER</a>
+ </div>
+
+ <footer>© 2026 LUCKY DEV · All Rights Reserved</footer>
+</div>
+<a class="fab" id="fab" target="_blank" rel="noopener" aria-label="Contact">💬</a>
+
+<script>
+const $=i=>document.getElementById(i);
+const E=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const U=u=>/^(https?:\/\/|tg:|\/|#|[a-zA-Z0-9_\-\.]+\.html)/.test(u||'')?u:'https://t.me/luckyxdevv';
+const D=window.SITE_CONFIG||{
+  name:'LUCKY DEV',
+  dp:'https://i.ibb.co/VcwHnGss/uploaded-image.jpg',
+  hubLink:'https://t.me/+uKkBzMqhoWlhYzQ1',
+  joinLink:'https://t.me/+p-DJj4WLiJ9mZjVl',
+  botsLink:'https://t.me/+uKkBzMqhoWlhYzQ1',
+  telegramLink:'https://t.me/luckyxdevv',
+  supportLink:'https://t.me/luckyxdevv'
+};
+
+function render(){
+ $('lg').innerHTML=E(D.name.split(' ')[0]||'LUCKY')+'<span>'+(D.name.split(' ').slice(1).join(' ')?' . '+E(D.name.split(' ').slice(1).join(' ')):'')+'</span>';
+ $('ph').innerHTML=D.dp?`<img src="${E(D.dp)}" alt="${E(D.name)}">`:`<span>${E(D.name.slice(0,2).toUpperCase())}</span>`;
+ $('nm').innerHTML=E(D.name);
+ document.title=D.name+' | Premium Bot Developer';
+ $('hubBtn').href=U(D.hubLink||'https://t.me/+uKkBzMqhoWlhYzQ1');
+ $('jc').href=U(D.joinLink);
+ $('b1').href=U(D.botsLink);
+ $('b0').href=U(D.telegramLink);
+ $('b2').href=U(D.supportLink);$('fab').href=U(D.supportLink);
+}
+render();
+
+(function boot(){
+ const el=document.getElementById('boot'),tx=document.getElementById('bootTxt'),bar=document.getElementById('bootBarI');
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.remove();return}
+ document.body.style.overflow='hidden';
+ function finish(){if(!el.parentNode)return;el.classList.add('hide');document.body.style.overflow='';setTimeout(()=>el.remove(),400)}
+ const lines=['> booting system core...','> loading configuration... <b>[OK]</b>','> initializing glassmorphic UI... <b>[OK]</b>','> welcome, '+D.name+' ⚡'];
+ let li=0,ci=0,out='';
+ function type(){
+  if(li>=lines.length){bar.style.width='100%';setTimeout(finish,350);return}
+  const line=lines[li];
+  if(ci<=line.length){out=lines.slice(0,li).join('\n')+(li>0?'\n':'')+line.slice(0,ci);
+   tx.innerHTML=out+'<span class="cursor"></span>';
+   bar.style.width=Math.round(((li+ci/line.length)/lines.length)*100)+'%';
+   ci++;setTimeout(type,12+Math.random()*20);
+  }else{li++;ci=0;setTimeout(type,160)}
+ }
+ el.addEventListener('click',finish);
+ type();
+})();
+</script></body></html>
